@@ -1,0 +1,18 @@
+{
+  "name": "todo-list-api",
+  "version": "1.0.0",
+  "description": "Mock api for a todo list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Debora Gomez",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "start": "nodemon server.js"
+}
