@@ -80,12 +80,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:3000/tasks/1",
-					"protocol": "http",
+					"raw": "{{host}}/tasks/1",
 					"host": [
-						"localhost"
+						"{{host}}"
 					],
-					"port": "3000",
 					"path": [
 						"tasks",
 						"1"
@@ -113,12 +111,10 @@
 					"raw": "{\n    \"title\": \"Beers\",\n    \"description\": \"Invite Debora for beers after class\",\n    \"author\": \"Deb\",\n    \"id\": 1\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/tasks/1",
-					"protocol": "http",
+					"raw": "{{host}}/tasks/1",
 					"host": [
-						"localhost"
+						"{{host}}"
 					],
-					"port": "3000",
 					"path": [
 						"tasks",
 						"1"
@@ -146,12 +142,10 @@
 					"raw": "{\n    \"title\": \"Dinner\",\n    \"description\": \"Let's go and have dinner together\",\n    \"author\": \"Deb\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/tasks",
-					"protocol": "http",
+					"raw": "{{host}}/tasks",
 					"host": [
-						"localhost"
+						"{{host}}"
 					],
-					"port": "3000",
 					"path": [
 						"tasks"
 					]
@@ -178,12 +172,10 @@
 					"raw": "{\n    \"title\": \"Dinner\",\n    \"description\": \"Let's go and have dinner together\",\n    \"author\": \"Deb\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/tasks/2",
-					"protocol": "http",
+					"raw": "{{host}}/tasks/2",
 					"host": [
-						"localhost"
+						"{{host}}"
 					],
-					"port": "3000",
 					"path": [
 						"tasks",
 						"2"
