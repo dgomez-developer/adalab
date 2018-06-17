@@ -7,6 +7,7 @@ function call(uri, method) {
         accepts: "application/json",
         cache: false,
         dataType: "json",
+        crossDomain: true,
         error: function(jqXHR, textStatus) {
           console.log("ajax error " + jqXHR.status);
         },
