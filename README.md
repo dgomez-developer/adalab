@@ -42,3 +42,7 @@ Link your Heroku app to your repository and then from the root folder of the rep
 ```
 git subtree push --prefix api-server origin deploys_heroku
 ```
+
+## References
+- [Build Node.js RESTful APIs in 10 Minutes](https://www.codementor.io/olatundegaruba/nodejs-restful-apis-in-10-minutes-q0sgsfhbd)
+- [REST Tutorial](https://github.com/miguelgrinberg/REST-tutorial)
