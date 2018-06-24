@@ -23,3 +23,11 @@ function call(uri, method) {
 function getTask(){
   call('https://adalab-mock-api.herokuapp.com/tasks/'+$('#taskId').val(),'GET');
 }
+
+function deleteTask(){
+  call('https://adalab-mock-api.herokuapp.com/tasks/'+$('#taskId').val(),'DELETE');
+}
+
+function getTasks(){
+  call('https://adalab-mock-api.herokuapp.com/tasks','GET');
+}

@@ -22,14 +22,13 @@
       <form>
         <label for="taskId">Task Id:</label>
         <input type="number" id="taskId" name="taskId" step="1"/>
-        <button onclick="getTask()">Get</button>
       </form>
       </ul>
+      <button onclick="getTask()">Get</button>
+      <button onclick="deleteTask()">Delete</button>
+      <button onclick=getTasks()>Get tasks</button>
     </li>
     </div>
     <script src="request-client.js"></script>
-    <script type="text/javascript">
-      call('https://adalab-mock-api.herokuapp.com/tasks','GET');
-    </script>
 </body>
 </html>
