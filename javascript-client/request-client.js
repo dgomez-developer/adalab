@@ -14,8 +14,12 @@ function call(uri, method) {
           console.log(msg);
         },
         success: function(data){
-          $("#main").text(JSON.stringify(data));
+          $("#tasksList").text(JSON.stringify(data));
         }
     };
     $.ajax(request);
+}
+
+function getTask(){
+  call('https://adalab-mock-api.herokuapp.com/tasks/'+$('#taskId').val(),'GET');
 }
