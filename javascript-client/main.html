@@ -21,11 +21,17 @@
       <ul>
       <form>
         <label for="taskId">Task Id:</label>
-        <input type="number" id="taskId" name="taskId" step="1"/>
+        <input type="number" id="taskId" name="taskId"/>
+        <label for="taskTitle">Title:</label>
+        <input type="text" id="taskTitle" name="taskTitle"/>
+        <label for="taskDescription">Description:</label>
+        <input type="text" id="taskDescription" name="taskDescription"/>
+        <label for="taskAuthor">Author:</label>
+        <input type="text" id="taskAuthor" name="taskAuthor"/>
       </form>
-      </ul>
       <button onclick="getTask()">Get</button>
       <button onclick="deleteTask()">Delete</button>
+      <button onclick="updateTask()">Update</button>
       <button onclick=getTasks()>Get tasks</button>
     </li>
     </div>
