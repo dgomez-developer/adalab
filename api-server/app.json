@@ -1,0 +1,7 @@
+{
+  "name": "Adalab ToDo List API",
+  "description": "API for a ToDo List",
+  "repository": "https://github.com/dgomez-developer/adalab.git",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}

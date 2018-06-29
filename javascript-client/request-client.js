@@ -5,11 +5,11 @@ function call(uri, method, body) {
         type: method,
         contentType: "application/json",
         accepts: "application/json",
-        body: body,
+        // data: JSON.stringify(body),
         cache: false,
         dataType: "json",
         error: function(jqXHR, textStatus) {
-          console.log("ajax error " + jqXHR.status);
+          console.log("ajax error " + jqXHR.status + textStatus);
         },
         done: function(msg) {
           console.log(msg);
@@ -22,6 +22,9 @@ function call(uri, method, body) {
           $('#taskAuthor').val(data.author);
         }
     };
+    if(body != null) {
+      request.data = JSON.stringify(body);
+    }
     $.ajax(request);
 }
 
@@ -50,6 +53,20 @@ function updateTask(){
   body.title = taskTitle;
   body.description = taskDescription;
   body.author = taskAuthor;
+  body.id = taskId;
   // call('https://adalab-mock-api.herokuapp.com/tasks/'+taskId, 'PUT', body);
-  call('http://localhost:3000/tasks/'+taskId, 'PUT', body);
+  call('http://localhost:3000/tasks/'+$('#taskId').val(), 'PUT', body);
+}
+
+function createTask(){
+
+  var taskTitle = $('#taskTitle').val();
+  var taskDescription = $('#taskDescription').val();
+  var taskAuthor = $('#taskAuthor').val();
+  var body = new Object();
+  body.title = taskTitle;
+  body.description = taskDescription;
+  body.author = taskAuthor;
+  // call('https://adalab-mock-api.herokuapp.com/tasks/'+taskId, 'PUT', body);
+  call('http://localhost:3000/tasks', 'POST', body);
 }

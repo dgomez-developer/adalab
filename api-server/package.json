@@ -1,0 +1,29 @@
+{
+  "name": "todo-list-api",
+  "version": "1.0.0",
+  "description": "Mock api for a todo list",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "8.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dgomez-developer/adalab.git"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "author": "Debora Gomez",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "start": "nodemon server.js"
+}

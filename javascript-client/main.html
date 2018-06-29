@@ -5,21 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
 <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
-<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
 </head>
 <body>
     <div class="navbar">
+      <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/647636/images/3960907/logo-adalab.png" width="200" height="100"/>
         <div class="navbar-inner">
-            <a class="brand" href="#">ToDo API Client</a>
+            <a class="brand" href="https://github.com/dgomez-developer/adalab">ToDo API Client</a>
         </div>
     </div>
-    <div id="main" class="container">
+    <div id="main" class="container" style="display:block;">
 
-      <li>
-      <ul><div id="tasksList"/></ul>
-      <ul>
-      <form>
+      <div id="tasksList" style="display:block;"></div>
+      <form style="display:block;">
         <label for="taskId">Task Id:</label>
         <input type="number" id="taskId" name="taskId"/>
         <label for="taskTitle">Title:</label>
@@ -32,8 +29,8 @@
       <button onclick="getTask()">Get</button>
       <button onclick="deleteTask()">Delete</button>
       <button onclick="updateTask()">Update</button>
-      <button onclick=getTasks()>Get tasks</button>
-    </li>
+      <button onclick="getTasks()">Get tasks</button>
+      <button onclick="createTask()">Create</button>
     </div>
     <script src="request-client.js"></script>
 </body>
