@@ -14,12 +14,12 @@ function call(uri, method, body) {
         done: function(msg) {
           console.log(msg);
         },
-        success: function(data){
-          $("#tasksList").text(JSON.stringify(data));
-          $('#taskId').val(data.id);
-          $('#taskTitle').val(data.title);
-          $('#taskDescription').val(data.description);
-          $('#taskAuthor').val(data.author);
+        success: function(data, textStatus, xhr){
+          $("#tasksList").text("Code: " + xhr.status + " Body: " + JSON.stringify(data));
+          $('#taskId').val(data.task.id);
+          $('#taskTitle').val(data.task.title);
+          $('#taskDescription').val(data.task.description);
+          $('#taskAuthor').val(data.task.author);
         }
     };
     if(body != null) {
@@ -30,12 +30,12 @@ function call(uri, method, body) {
 
 function getTask(){
   //call('https://adalab-mock-api.herokuapp.com/tasks/'+$('#taskId').val(),'GET', null);
-  call('http://localhost:3000/tasks/'+$('#taskId').val(),'GET', null);
+  call('http://localhost:3000/task/'+$('#taskId').val(),'GET', null);
 }
 
 function deleteTask(){
   //call('https://adalab-mock-api.herokuapp.com/tasks/'+$('#taskId').val(),'DELETE', null);
-  call('http://localhost:3000/tasks/'+$('#taskId').val(),'DELETE', null);
+  call('http://localhost:3000/task/'+$('#taskId').val(),'DELETE', null);
 }
 
 function getTasks(){
@@ -55,7 +55,7 @@ function updateTask(){
   body.author = taskAuthor;
   body.id = taskId;
   // call('https://adalab-mock-api.herokuapp.com/tasks/'+taskId, 'PUT', body);
-  call('http://localhost:3000/tasks/'+$('#taskId').val(), 'PUT', body);
+  call('http://localhost:3000/task/'+$('#taskId').val(), 'PUT', body);
 }
 
 function createTask(){
@@ -68,5 +68,5 @@ function createTask(){
   body.description = taskDescription;
   body.author = taskAuthor;
   // call('https://adalab-mock-api.herokuapp.com/tasks/'+taskId, 'PUT', body);
-  call('http://localhost:3000/tasks', 'POST', body);
+  call('http://localhost:3000/task', 'POST', body);
 }
