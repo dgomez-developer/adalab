@@ -15,15 +15,13 @@
     "url": "https://github.com/dgomez-developer/adalab.git"
   },
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.16.3",
+    "express-basic-auth": "^1.1.5"
   },
   "author": "Debora Gomez",
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^1.17.5"
-  },
-  "dependencies": {
-    "express": "^4.16.3"
   },
   "start": "nodemon server.js"
 }
