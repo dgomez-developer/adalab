@@ -2,6 +2,7 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000;
   bodyParser = require('body-parser');
+  basicAuth = require('express-basic-auth');
 
   //CORS middleware
   var allowCrossDomain = function(req, res, next) {
@@ -14,7 +15,9 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(allowCrossDomain);
-
+app.use(basicAuth({
+    users: { 'admin': 'supersecret' }
+}));
 // When a route is used, then return 404
 // app.use(function(req, res) {
 //   res.status(404).send({url: req.originalUrl + ' not found'})
