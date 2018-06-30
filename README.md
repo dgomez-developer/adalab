@@ -28,6 +28,12 @@ npm install --save-dev nodemon
 npm install express --save
 ```
 
+## Setting up the node js server with basic authorization
+
+We need the basic auth package.
+```
+npm install express-basic-auth
+```
 ## How to deploy locally
 
 Execute:
