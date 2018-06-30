@@ -10,9 +10,9 @@ exports.list_all_tasks = function(request, response) {
 
 exports.create_a_task = function(request, response) {
   console.log('Create task: ' + JSON.stringify(request.body));
-  var task = request.body;
-  task.id = model.tasksList[model.tasksList.length - 1].id + 1;
-  model.tasksList.push(task);
+  var taskRequest = request.body;
+  taskRequest.id = model.tasksList[model.tasksList.length - 1].id + 1;
+  model.tasksList.push(taskRequest);
   var taskResponse = new Object();
   taskResponse.task = model.tasksList[model.tasksList.length - 1];
   response.status(201);
