@@ -3,7 +3,9 @@
 var model = require('../models/models');
 
 exports.list_all_tasks = function(request, response) {
-  response.json(model.tasksList);
+  var tasksResponse = new Object();
+  tasksResponse.tasks = model.tasksList;
+  response.json(tasksResponse);
 };
 
 exports.create_a_task = function(request, response) {
@@ -11,7 +13,10 @@ exports.create_a_task = function(request, response) {
   var task = request.body;
   task.id = model.tasksList[model.tasksList.length - 1].id + 1;
   model.tasksList.push(task);
-  response.json(model.tasksList[model.tasksList.length - 1])
+  var taskResponse = new Object();
+  taskResponse.task = model.tasksList[model.tasksList.length - 1];
+  response.status(201);
+  response.json(taskResponse);
 };
 
 exports.read_a_task = function(request, response) {
@@ -24,7 +29,9 @@ exports.read_a_task = function(request, response) {
        break;
     }
   }
-  response.json(requestedTask)
+  var taskResponse = new Object();
+  taskResponse.task = requestedTask;
+  response.json(taskResponse);
 };
 
 
@@ -38,7 +45,9 @@ exports.update_a_task = function(request, response) {
        break;
     }
   }
-  response.json(task)
+  var taskResponse = new Object();
+  taskResponse.task = task;
+  response.json(taskResponse);
 };
 
 
@@ -51,6 +60,5 @@ exports.delete_a_task = function(request, response) {
        break;
     }
   }
-  response.json({ message: 'Task ' + taskId + ' successfully deleted' })
-
+  response.status(204).send();
 };

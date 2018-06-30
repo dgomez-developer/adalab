@@ -15,13 +15,10 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(allowCrossDomain);
-app.use(basicAuth({
-    users: { 'admin': 'supersecret' }
-}));
-// When a route is used, then return 404
-// app.use(function(req, res) {
-//   res.status(404).send({url: req.originalUrl + ' not found'})
-// });
+// app.use(basicAuth({
+//     users: { 'admin': 'supersecret' }
+// }));
+
 var routes = require('./routes/routes'); //importing route
 routes(app); //register the route
 
