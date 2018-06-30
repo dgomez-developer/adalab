@@ -15,9 +15,9 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(allowCrossDomain);
-// app.use(basicAuth({
-//     users: { 'admin': 'supersecret' }
-// }));
+app.use(basicAuth({
+    users: { 'admin': 'supersecret' }
+}));
 
 var routes = require('./routes/routes'); //importing route
 routes(app); //register the route
