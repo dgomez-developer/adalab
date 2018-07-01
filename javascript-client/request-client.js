@@ -34,15 +34,3 @@ function getTask(){
 function getTasks(){
   call('https://adalab-mock-api.herokuapp.com/tasks','GET', null);
 }
-
-function createTask(){
-
-  var taskTitle = $('#taskTitle').val();
-  var taskDescription = $('#taskDescription').val();
-  var taskAuthor = $('#taskAuthor').val();
-  var body = new Object();
-  body.title = taskTitle;
-  body.description = taskDescription;
-  body.author = taskAuthor;
-  call('https://adalab-mock-api.herokuapp.com/task', 'POST', body);
-}
