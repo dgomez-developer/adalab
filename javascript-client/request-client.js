@@ -35,20 +35,6 @@ function getTasks(){
   call('https://adalab-mock-api.herokuapp.com/tasks','GET', null);
 }
 
-function updateTask(){
-
-  var taskId = $('#taskId').val();
-  var taskTitle = $('#taskTitle').val();
-  var taskDescription = $('#taskDescription').val();
-  var taskAuthor = $('#taskAuthor').val();
-  var body = new Object();
-  body.title = taskTitle;
-  body.description = taskDescription;
-  body.author = taskAuthor;
-  body.id = taskId;
-  call('https://adalab-mock-api.herokuapp.com/task/'+taskId, 'PUT', body);
-}
-
 function createTask(){
 
   var taskTitle = $('#taskTitle').val();
