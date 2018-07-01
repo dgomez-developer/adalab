@@ -5,7 +5,6 @@ function call(uri, method, body) {
         type: method,
         contentType: "application/json",
         accepts: "application/json",
-        // data: JSON.stringify(body),
         cache: false,
         dataType: "json",
         error: function(jqXHR, textStatus) {
@@ -16,22 +15,10 @@ function call(uri, method, body) {
         },
         success: function(data, textStatus, xhr){
           $("#tasksList").text("Code: " + xhr.status + " Body: " + JSON.stringify(data));
-          $('#taskId').val(data.task.id);
-          $('#taskTitle').val(data.task.title);
-          $('#taskDescription').val(data.task.description);
-          $('#taskAuthor').val(data.task.author);
         }
     };
     if(body != null) {
       request.data = JSON.stringify(body);
     }
     $.ajax(request);
-}
-
-function getTask(){
-  call('https://adalab-mock-api.herokuapp.com/task/'+$('#taskId').val(),'GET', null);
-}
-
-function getTasks(){
-  call('https://adalab-mock-api.herokuapp.com/tasks','GET', null);
 }
