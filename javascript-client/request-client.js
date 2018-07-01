@@ -31,10 +31,6 @@ function getTask(){
   call('https://adalab-mock-api.herokuapp.com/task/'+$('#taskId').val(),'GET', null);
 }
 
-function deleteTask(){
-  call('https://adalab-mock-api.herokuapp.com/task/'+$('#taskId').val(),'DELETE', null);
-}
-
 function getTasks(){
   call('https://adalab-mock-api.herokuapp.com/tasks','GET', null);
 }
