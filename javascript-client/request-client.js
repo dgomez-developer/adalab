@@ -5,7 +5,6 @@ function call(uri, method, body) {
         type: method,
         contentType: "application/json",
         accepts: "application/json",
-        // data: JSON.stringify(body),
         cache: false,
         dataType: "json",
         error: function(jqXHR, textStatus) {
@@ -16,57 +15,10 @@ function call(uri, method, body) {
         },
         success: function(data, textStatus, xhr){
           $("#tasksList").text("Code: " + xhr.status + " Body: " + JSON.stringify(data));
-          $('#taskId').val(data.task.id);
-          $('#taskTitle').val(data.task.title);
-          $('#taskDescription').val(data.task.description);
-          $('#taskAuthor').val(data.task.author);
         }
     };
     if(body != null) {
       request.data = JSON.stringify(body);
     }
     $.ajax(request);
-}
-
-function getTask(){
-  //call('https://adalab-mock-api.herokuapp.com/tasks/'+$('#taskId').val(),'GET', null);
-  call('http://localhost:3000/task/'+$('#taskId').val(),'GET', null);
-}
-
-function deleteTask(){
-  //call('https://adalab-mock-api.herokuapp.com/tasks/'+$('#taskId').val(),'DELETE', null);
-  call('http://localhost:3000/task/'+$('#taskId').val(),'DELETE', null);
-}
-
-function getTasks(){
-  // call('https://adalab-mock-api.herokuapp.com/tasks','GET', null);
-  call('http://localhost:3000/tasks/','GET', null);
-}
-
-function updateTask(){
-
-  var taskId = $('#taskId').val();
-  var taskTitle = $('#taskTitle').val();
-  var taskDescription = $('#taskDescription').val();
-  var taskAuthor = $('#taskAuthor').val();
-  var body = new Object();
-  body.title = taskTitle;
-  body.description = taskDescription;
-  body.author = taskAuthor;
-  body.id = taskId;
-  // call('https://adalab-mock-api.herokuapp.com/tasks/'+taskId, 'PUT', body);
-  call('http://localhost:3000/task/'+$('#taskId').val(), 'PUT', body);
-}
-
-function createTask(){
-
-  var taskTitle = $('#taskTitle').val();
-  var taskDescription = $('#taskDescription').val();
-  var taskAuthor = $('#taskAuthor').val();
-  var body = new Object();
-  body.title = taskTitle;
-  body.description = taskDescription;
-  body.author = taskAuthor;
-  // call('https://adalab-mock-api.herokuapp.com/tasks/'+taskId, 'PUT', body);
-  call('http://localhost:3000/task', 'POST', body);
 }

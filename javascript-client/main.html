@@ -14,24 +14,9 @@
         </div>
     </div>
     <div id="main" class="container" style="display:block;">
-
       <div id="tasksList" style="display:block;"></div>
-      <form style="display:block;">
-        <label for="taskId">Task Id:</label>
-        <input type="number" id="taskId" name="taskId"/>
-        <label for="taskTitle">Title:</label>
-        <input type="text" id="taskTitle" name="taskTitle"/>
-        <label for="taskDescription">Description:</label>
-        <input type="text" id="taskDescription" name="taskDescription"/>
-        <label for="taskAuthor">Author:</label>
-        <input type="text" id="taskAuthor" name="taskAuthor"/>
-      </form>
-      <button onclick="getTask()">Get</button>
-      <button onclick="deleteTask()">Delete</button>
-      <button onclick="updateTask()">Update</button>
-      <button onclick="getTasks()">Get tasks</button>
-      <button onclick="createTask()">Create</button>
     </div>
     <script src="request-client.js"></script>
+    <script>call('https://adalab-mock-api.herokuapp.com/tasks','GET', null);</script>
 </body>
 </html>
