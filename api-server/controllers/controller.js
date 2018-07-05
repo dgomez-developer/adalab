@@ -33,32 +33,3 @@ exports.read_a_task = function(request, response) {
   taskResponse.task = requestedTask;
   response.json(taskResponse);
 };
-
-
-exports.update_a_task = function(request, response) {
-  console.log('Update task: '+ request.params.taskId + ' - ' + JSON.stringify(request.body));
-  var taskId = request.params.taskId;
-  var task = request.body;
-  for(var i = model.tasksList.length - 1; i >= 0; i--) {
-    if(model.tasksList[i].id == taskId) {
-       model.tasksList[i] = task;
-       break;
-    }
-  }
-  var taskResponse = new Object();
-  taskResponse.task = task;
-  response.json(taskResponse);
-};
-
-
-exports.delete_a_task = function(request, response) {
-  console.log('Delete task: ' + request.params.taskId);
-  var taskId = request.params.taskId;
-  for(var i = model.tasksList.length - 1; i >= 0; i--) {
-    if(model.tasksList[i].id == taskId) {
-       model.tasksList.splice(i, 1);
-       break;
-    }
-  }
-  response.status(204).send();
-};
