@@ -49,16 +49,3 @@ exports.update_a_task = function(request, response) {
   taskResponse.task = task;
   response.json(taskResponse);
 };
-
-
-exports.delete_a_task = function(request, response) {
-  console.log('Delete task: ' + request.params.taskId);
-  var taskId = request.params.taskId;
-  for(var i = model.tasksList.length - 1; i >= 0; i--) {
-    if(model.tasksList[i].id == taskId) {
-       model.tasksList.splice(i, 1);
-       break;
-    }
-  }
-  response.status(204).send();
-};
