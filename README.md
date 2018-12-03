@@ -6,3 +6,7 @@ You will find:
 - **api-server**: NodeJS Mock ToDo List API
 - **javascript-client**: JS Client for ToDo List API
 - **postman-collection**: Postman collection for ToDo List API
+
+## Quiz
+
+[Developers love APIs](https://play.kahoot.it/#/k/b17e2217-292d-42c4-bb44-1744962a64ea)
