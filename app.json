@@ -1,0 +1,5 @@
+{
+  "name": "Heroines API",
+  "description": "An heroines API, which can easily be deployed to Heroku.",
+  "addons": [ "heroku-postgresql" ]
+}
