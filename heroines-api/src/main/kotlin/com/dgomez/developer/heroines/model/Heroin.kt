@@ -10,4 +10,4 @@ data class Heroin(
         @Id
         val id: String = UUID.randomUUID().toString(),
         val name: String = "",
-        @ElementCollection(targetClass = String::class) val superPowers: List<String> = listOf())
+        @ElementCollection(targetClass = String::class) val superPowers: MutableList<String> = mutableListOf())
