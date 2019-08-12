@@ -29,7 +29,7 @@ class HeroinesController {
     fun updateHeroin(@PathVariable("id") id: String, @RequestBody heroin: Heroin,
                      response: HttpServletResponse): Heroin? {
         if (repository.existsById(id)) {
-            return repository.saveAndFlush(heroin)
+            return repository.saveAndFlush(heroin.copy(id = id))
         }
         response.status = HttpStatus.BAD_REQUEST.value()
         return null
