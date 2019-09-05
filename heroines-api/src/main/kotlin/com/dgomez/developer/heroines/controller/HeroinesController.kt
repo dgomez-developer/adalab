@@ -43,6 +43,7 @@ class HeroinesController {
         return null
     }
 
+    @CrossOrigin
     @DeleteMapping("/ada-heroines/{id}")
     fun deleteHeroin(@PathVariable("id") id: String, response: HttpServletResponse) {
         response.status = HttpStatus.NO_CONTENT.value()
