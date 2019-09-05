@@ -13,19 +13,27 @@ class HeroinesController {
     @Autowired
     lateinit var repository: HeroinesRepository
 
+    @CrossOrigin
     @GetMapping("/ada-heroines")
     fun listAdaHeroines(): List<Heroin> {
         return repository.findAll()
     }
 
+    @CrossOrigin
+    @GetMapping("/ada-heroines/{id}")
+    fun getAdaHeroinById(@PathVariable("id") id: String): Heroin {
+        return repository.getOne(id)
+    }
 
-    @PostMapping("/ada-heorin")
+    @CrossOrigin
+    @PostMapping("/ada-heorines")
     fun addHeroin(@RequestBody heroin: Heroin, response: HttpServletResponse): Heroin? {
         response.status = HttpStatus.CREATED.value()
         return repository.save(heroin)
     }
 
-    @PutMapping("/ada-heroin/{id}")
+    @CrossOrigin
+    @PutMapping("/ada-heroines/{id}")
     fun updateHeroin(@PathVariable("id") id: String, @RequestBody heroin: Heroin,
                      response: HttpServletResponse): Heroin? {
         if (repository.existsById(id)) {
@@ -35,7 +43,8 @@ class HeroinesController {
         return null
     }
 
-    @DeleteMapping("/ada-heroin/{id}")
+    @CrossOrigin
+    @DeleteMapping("/ada-heroines/{id}")
     fun deleteHeroin(@PathVariable("id") id: String, response: HttpServletResponse) {
         response.status = HttpStatus.NO_CONTENT.value()
         repository.deleteById(id)
