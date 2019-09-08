@@ -1,0 +1,3 @@
+[submodule "ada-heroines-front"]
+	path = ada-heroines-front
+	url = git@github.com:estherpato/ada-heroines-front.git
