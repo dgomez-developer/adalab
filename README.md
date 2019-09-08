@@ -3,9 +3,11 @@
 Repository where all the projects done in Adalab worshops are hosted.
 
 You will find:
-- **api-server**: NodeJS Mock ToDo List API
-- **javascript-client**: JS Client for ToDo List API
-- **postman-collection**: Postman collection for ToDo List API
+- **api-server**: NodeJS Mock ToDo List API.
+- **javascript-client**: JS Client for ToDo List API.
+- **postman-collection**: Postman collection for ToDo List API.
+- **heroines-api**: SpringBoot server in Kotlin that uses JPA as DB.
+- **ada-heroines-front**: JS front for consuming Ada Heroines API.
 
 ## Quiz
 
