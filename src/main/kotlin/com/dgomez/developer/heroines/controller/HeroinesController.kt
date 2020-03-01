@@ -26,7 +26,7 @@ class HeroinesController {
     }
 
     @CrossOrigin
-    @PostMapping("/ada-heorines")
+    @PostMapping("/ada-heroines")
     fun addHeroin(@RequestBody heroin: Heroin, response: HttpServletResponse): Heroin? {
         response.status = HttpStatus.CREATED.value()
         return repository.save(heroin)
